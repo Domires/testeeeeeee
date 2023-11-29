@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { provideEnvironmentNgxMask, IConfig, NgxMaskDirective, provideNgxMask,  NgxMaskPipe } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -10,9 +11,11 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxMaskDirective,
+    NgxMaskPipe,
   ],
-  providers: [],
+  providers: [provideEnvironmentNgxMask(), provideNgxMask()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
